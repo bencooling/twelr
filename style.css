@@ -1,0 +1,9 @@
+/*
+Theme Name:     Twelr
+Description:    Child theme for the Twenty Eleven theme. Includes slimbox compatable native gallery, snarfer custom template and Twitter bootstrap
+Author:         Ben Cooling
+Template:       twentyeleven
+Version:        0.2
+*/
+
+@import url("../twentyeleven/style.css");
