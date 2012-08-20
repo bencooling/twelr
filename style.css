@@ -6,4 +6,79 @@ Template:       twentyeleven
 Version:        0.2
 */
 
+/*
+Following ids used by twentyeleven:
+#page, #branding, #site-title, #site-description, #access, #main, #primary, #secondary, #content,
+#site-generator, .sidebar
+Drop down navigation
+*/
 @import url("../twentyeleven/style.css");
+
+/* reset
+-------------------------------------------------------------- */
+body, input, textarea, select, p {
+  /* General typography */
+}
+button,fieldset,img { border:none }
+ol, ul              { margin-left:0px }
+a, button           { cursor:pointer }
+textarea            {
+  resize:none; /*Turn off safari resize */
+  overflow: auto; /* remove scrollbar from windows */
+}
+*:focus { outline:none } /* chrome orange focus */
+input {
+  /* standardise input fields */
+  height:30px; line-height:30px; padding: 0px 10px; text-transform: none;
+  /* remove ios rounded input fields */
+  -webkit-appearance: none;
+  -webkit-border-radius:0px;
+}
+
+/* Twenty-eleven overwrite
+------------------------------------------- */
+body {
+  padding:0 !important; background-color:#eeeeee;
+}
+p {
+  margin:0;
+}
+
+/* Utilty classes
+------------------------------------------- */
+.wrapper {
+  width: 980px; margin:0 auto; position:relative
+}
+.clear {
+  clear: both;
+}
+.container {
+  position: relative;
+}
+.inner {
+	/* useful classname */
+}
+
+/* Structure 
+------------------------------------------- */
+/*
+To prevent clashes with parent theme structural elements:
+.head .foot .side .main
+*/
+
+.foot p {
+  text-align:center;
+}
+
+
+/* Header
+------------------------------------------- */
+
+/* Navigation
+------------------------------------------- */
+
+/* Sidebar
+------------------------------------------- */
+
+/* Footer
+------------------------------------------- */
