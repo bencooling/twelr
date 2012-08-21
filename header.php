@@ -54,17 +54,19 @@
 		</div>
 	</header>
 
-	<div class="container">
-		<nav id="access" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav>
-	</div>
 
 <div class="container">
 	<div class="navbar">
-		<nav id="access" role="navigation">
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class'=>'nav', 'container_class' => 'nav-collapse' ) ); ?>
-		</nav>
+    <div class="navbar-inner">
+        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </a>
+        <div class="nav-collapse">
+					<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_class'=>'nav', 'menu_id'=>false, 'container' => false, 'walker' => new Twelr_Walker() ) ); ?>
+				</div>
+			</div>
 	</div>
 </div>
 
@@ -77,32 +79,12 @@
           Account
           <b class="caret"></b>
     </a>
-    <ul class="dropdown-menu">
+	    <ul class="dropdown-menu">
       ...
     </ul>
   </li>
 </ul>
--->
-
-	<div class="navbar">
-    <div class="navbar-inner">
-      <div class="container">
-        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </a>
-        <div class="nav-collapse">
-          <ul class="nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-			
+-->			
 
 
 <div class="container">

@@ -43,6 +43,9 @@ body {
 p {
   margin:0;
 }
+.well.widget ul {
+  margin-left:20px;
+}
 
 /* Utilty classes
 ------------------------------------------- */

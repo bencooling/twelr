@@ -3,5 +3,12 @@
 Twelr deviates from its parent theme, Twenty Eleven, in the following ways:
 
 1. <title> tag output: removed unneccsary logic; use yoast seo plugin for compiling page titles
-2. Most Twenty Eleven stuctural-based elements removed in favor of a layout using bootstrap classes
-3.    
+2. Most Twenty Eleven stuctural-based elements removed in favor of a layout utilising bootstrap grid 
+3. 
+
+
+
+# Gotchas
+Keep in mind the following principals when working with this theme:
+
+1. Menu items with a drop down cannot be a link, as bootstrap is mobile friendly, it only supports click (touch) events on menu items (No hover to reveal).

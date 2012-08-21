@@ -24,7 +24,7 @@ register_sidebar(array(
   'description' => __( 'Widgets in this area will be shown on the side.' ),
   'before_title' => '<h6>',
   'after_title' => '</h6>',
-  'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+  'before_widget' => '<aside id="%1$s" class="well widget %2$s">',
   'after_widget' => '</aside>',
 ));
 
@@ -36,6 +36,7 @@ function twelr_enqueue_scripts() {
 
   // jQuery
   wp_enqueue_script('jquery');
+  wp_enqueue_script('twelr', get_stylesheet_directory_uri() . '/js/twelr.js', array('jquery'));
 
   // bootstrap
   wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/resources/bootstrap/js/bootstrap.js', array('jquery'));
@@ -55,10 +56,48 @@ function twelr_enqueue_scripts() {
   
   // orbit
   if (is_page_template('home.php') || is_page_template('gallery.php')){  // page template specific
-    wp_enqueue_style( 'orbit-css', get_stylesheet_directory_uri() . '/orbit/orbit-1.2.3.css' );
-    wp_enqueue_script( 'orbit-js', get_stylesheet_directory_uri() . '/orbit/jquery.orbit-1.2.3.min.js', 'jquery');
+    wp_enqueue_style( 'orbit-css', get_stylesheet_directory_uri() . '/js/orbit/orbit-1.2.3.css' );
+    wp_enqueue_script( 'orbit-js', get_stylesheet_directory_uri() . '/js/orbit/jquery.orbit-1.2.3.min.js', 'jquery');
   }
 
 }
 
+/**
+ * Add submenu class for menu items with sub menus
+ */
+add_filter('wp_nav_menu_objects', 'twelr_nav_menu_objects');
+function twelr_nav_menu_objects($items){
+  function hasSubMenu($menu_item_id, $items) {
+    foreach ($items as $item) {
+      if ($item->menu_item_parent && $item->menu_item_parent==$menu_item_id) return true;
+    }
+    return false;
+  }
+  foreach ($items as $item) {
+    if (hasSubMenu($item->ID, $items)) {
+      array_push($item->classes, 'dropdown');
+      $item->target = 'dropdown'; // hack to identify dropdowns when filtering anchors later
+      // $item->classes[] = 'dropdown';
+    }
+  }
+  return $items;
+}
 
+/**
+ * Modify the ul submenu class 
+ */
+class Twelr_Walker extends Walker_Nav_Menu {
+  function start_lvl(&$output, $depth) {
+    $indent = str_repeat("\t", $depth);
+    $output .= "\n$indent<ul class=\"dropdown-menu\">\n";
+  }
+}
+
+/**
+ * Modify the anchor element
+ */
+add_filter('walker_nav_menu_start_el', 'twelr_walker_nav_menu_start_el');
+function twelr_walker_nav_menu_start_el($output){
+  $output= preg_replace('/<a/', '<a class="dropdown-toggle" data-toggle="dropdown"', $output, 1);
+  return $output;
+}
