@@ -8,15 +8,14 @@
 
 get_header(); ?>
 
-<div class="main">
+<div class="main span8">
 	<?php if ( have_posts() ) : ?>
 		<h1 class="page-title">
 			<?php printf( __( 'Search Results for: %s', 'twentyeleven' ), '<span>' . get_search_query() . '</span>' ); ?>
 		</h1>
 		<?php twentyeleven_content_nav( 'nav-above' ); ?>
 		<?php while ( have_posts() ) : the_post(); ?>
-	    <h2><?php the_title(); ?></h2>
-	    <?php the_content(); ?>
+	    <?php get_template_part( 'content', get_post_format() ); ?>
 		<?php endwhile; ?>
 		<?php twentyeleven_content_nav( 'nav-below' ); ?>
 	<?php else : ?>

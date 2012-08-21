@@ -46,6 +46,15 @@ p {
 .well.widget ul {
   margin-left:20px;
 }
+.singular .entry-header, .singular .entry-content, .singular footer.entry-meta, .singular #comments-title {
+  width:inherit;
+}
+.singular .entry-header .entry-meta {
+  position:static;
+}
+.singular .hentry {
+  padding:inherit;
+}
 
 /* Utilty classes
 ------------------------------------------- */

@@ -98,6 +98,15 @@ class Twelr_Walker extends Walker_Nav_Menu {
  */
 add_filter('walker_nav_menu_start_el', 'twelr_walker_nav_menu_start_el');
 function twelr_walker_nav_menu_start_el($output){
-  $output= preg_replace('/<a/', '<a class="dropdown-toggle" data-toggle="dropdown"', $output, 1);
+  $output= preg_replace('/<a title="dropdown"/', '<a class="dropdown-toggle" data-toggle="dropdown"', $output, 1);
   return $output;
+}
+
+/**
+ * Add Home to Pages in Administration > Appearance > Menus
+ */
+add_filter( 'wp_page_menu_args', 'twelr_page_menu_args' );
+function twelr_page_menu_args( $args ) {
+  $args['show_home'] = true;
+  return $args;
 }

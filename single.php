@@ -8,14 +8,13 @@
 
 get_header(); ?>
 
-<div class="main">
+<div class="main span8">
 	<nav>
 	  <p class="left"><?php previous_posts_link('&larr; Previous Post'); ?></p>
 	  <p class="right"><?php next_posts_link('Next Post &rarr;'); ?></p>
 	</nav>
 	<?php if (have_posts()) while (have_posts()) : the_post(); ?>   
-	  <h1><?php the_title(); ?></h1>
-	  <?php the_content(); ?>
+	  <?php get_template_part( 'content', get_post_format() ); ?>
 	  <?php comments_template( '', true ); ?>
   <?php endwhile; ?>
 </div>
