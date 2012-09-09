@@ -55,6 +55,9 @@ p {
 .singular .hentry {
   padding:inherit;
 }
+.widget_search form, .widget_search #searchform input {
+  margin:0;
+}
 
 /* Utilty classes
 ------------------------------------------- */
