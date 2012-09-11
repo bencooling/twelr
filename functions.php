@@ -39,8 +39,8 @@ function twelr_enqueue_scripts() {
   wp_enqueue_script('twelr', get_stylesheet_directory_uri() . '/js/twelr.js', array('jquery'));
 
   // bootstrap
-  wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/resources/bootstrap/js/bootstrap.js', array('jquery'));
-  wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/resources/bootstrap/css/bootstrap.css');
+  wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/resources/bootstrap-2.1.1/js/bootstrap.js', array('jquery'));
+  wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/resources/bootstrap-2.1.1/css/bootstrap.css');
 
   // reveal
   wp_enqueue_script('reveal', get_stylesheet_directory_uri() . '/js/reveal/jquery.reveal.js', array('jquery'));
