@@ -27,7 +27,7 @@ textarea            {
   overflow: auto; /* remove scrollbar from windows */
 }
 *:focus { outline:none } /* chrome orange focus */
-input {
+input[type=text] {
   /* standardise input fields */
   height:30px; line-height:30px; padding: 0px 10px; text-transform: none;
   /* remove ios rounded input fields */
