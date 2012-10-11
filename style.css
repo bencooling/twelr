@@ -61,18 +61,19 @@ p {
 
 /* Utilty classes
 ------------------------------------------- */
-.wrapper {
-  width: 980px; margin:0 auto; position:relative
-}
 .clear {
   clear: both;
 }
-.container {
-  position: relative;
-}
-.inner {
-	/* useful classname */
-}
+.group:after {
+  visibility: hidden;
+  display: block;
+  content: "";
+  clear: both;
+  height: 0;
+  }
+* html .group             { zoom: 1; } /* IE6 */
+*:first-child+html .group { zoom: 1; } /* IE7 */
+
 
 /* Structure 
 ------------------------------------------- */
