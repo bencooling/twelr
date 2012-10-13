@@ -1,11 +1,11 @@
 
-# Twenty Eleven Overrides
-Twelr deviates from its parent theme, Twenty Eleven, in the following ways:
+# Twelr
 
-1. <title> tag output: removed unneccsary logic; use yoast seo plugin for compiling page titles
-1. Most Twenty Eleven stuctural-based elements removed in favor of a layout utilising bootstrap grid 
-1. 
+Twenty Eleven Overrides
+Twelr deviates from it's parent theme, Twenty Eleven, in the following ways:
 
+1. Removed unnecessary logic from the &lt;title&gt; tag output. Recommended to use yoast seo plugin for compiling page titles.
+1. Most Twenty Eleven stuctural-based elements removed in favor of a layout utilising bootstrap grid.
 
 
 # Gotchas
